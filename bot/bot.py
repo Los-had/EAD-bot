@@ -2,8 +2,7 @@ from pyautogui import *
 from time import sleep
 from random import choice
 import sys
-
-import pyautogui
+import webbrowser
 
 options = '''
 ==================================================
@@ -27,11 +26,27 @@ options = '''
 print(options)
 
 userchoice = input("O que deseja fazer?\n >  ")
-
+#funções
+def vlink(link):
+    #opt1 = 'https://'
+    opt2 = 'http://'
+    if opt2 or opt1 not in link:
+        print("Isto não é um link")
+        sleep(10)
+        sys.exit()
+    else:
+        webbrowser.open_new_tab(link)
+def bot_action(ulink):
+    vlink(ulink)
+    pyautogui.hotkey("ctrl", "d")
+    pyautogui.hotkey("ctrl", "e")
+#verificando o que o usuario digitou
 if userchoice == "s":
     sys.exit()
 elif userchoice == "soe":
-    soelink = input("Coloque o link da aula embaixo.\n >  ")
-    
+    slink = input("Coloque o link da aula embaixo.\n >  ")
+    bot_action(slink)
 else:
-    pass
+    print("Comando inválido")
+    sleep(10)
+#made by Los-had
