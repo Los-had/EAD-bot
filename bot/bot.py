@@ -1,8 +1,19 @@
-from pyautogui import *
+import pyautogui
 from time import sleep
 from random import choice
 import sys
 import webbrowser
+
+bot_logo = '''
+      \_/
+     (* *)
+    __)#(__
+   ( )...( )(_)
+   || |_| ||//     EAD-bot
+>==() | | ()/
+    _(___)_
+   [-]   [-]
+'''
 
 options = '''
 ==================================================
@@ -23,30 +34,87 @@ options = '''
 ==================================================
 '''
 
+print(bot_logo)
 print(options)
 
 userchoice = input("O que deseja fazer?\n >  ")
 #funções
 def vlink(link):
     #opt1 = 'https://'
-    opt2 = 'http://'
-    if opt2 or opt1 not in link:
-        print("Isto não é um link")
+    meet_link = 'https://meet.google.com/'
+    if meet_link not in link:
+        print("Isto não é um link do meet! Tente novamente =(")
         sleep(10)
         sys.exit()
     else:
         webbrowser.open_new_tab(link)
 def bot_action(ulink):
     vlink(ulink)
+    msg1 = 'Bom dia!'
+    msg2 = 'Qual é o dever de hoje?'
+    msg3 = 'Qual é a página do livro?'
+    msg4 = 'Tudo bem?'
+    msg5 = 'Que legal!'
+    msg6 = 'Oi.'
+    opt_msg = [msg1, msg2, msg3, msg4, msg5, msg6]
+    msg_choice = choice(opt_msg)
+    pyautogui.sleep(15)
     pyautogui.hotkey("ctrl", "d")
+    pyautogui.sleep(1)
     pyautogui.hotkey("ctrl", "e")
+    pyautogui.sleep(1)
+    pyautogui.click(x = 1000, y = 460, clicks=1)
+    pyautogui.sleep(10)
+    pyautogui.hotkey("ctrl", "alt", "c")
+    pyautogui.sleep(2)
+    pyautogui.typewrite(msg_choice)
+    pyautogui.sleep(1)
+    pyautogui.press("enter")
+    pyautogui.sleep(1)
+    pyautogui.press("esc") 
 #verificando o que o usuario digitou
 if userchoice == "s":
     sys.exit()
 elif userchoice == "soe":
     slink = input("Coloque o link da aula embaixo.\n >  ")
     bot_action(slink)
+elif userchoice == "m1":
+    slink = input("Coloque o link da aula embaixo.\n >  ")
+    bot_action(slink)
+elif userchoice == "m2":
+    slink = input("Coloque o link da aula embaixo.\n >  ")
+    bot_action(slink)
+elif userchoice == "p":
+    slink = input("Coloque o link da aula embaixo.\n >  ")
+    bot_action(slink)
+elif userchoice == "i":
+    slink = input("Coloque o link da aula embaixo.\n >  ")
+    bot_action(slink)
+elif userchoice == "oi":
+    slink = input("Coloque o link da aula embaixo.\n >  ")
+    bot_action(slink)
+elif userchoice == "oc":
+    slink = input("Coloque o link da aula embaixo.\n >  ")
+    bot_action(slink)
+elif userchoice == "h":
+    slink = input("Coloque o link da aula embaixo.\n >  ")
+    bot_action(slink)
+elif userchoice == "a":
+    slink = input("Coloque o link da aula embaixo.\n >  ")
+    bot_action(slink)
+elif userchoice == "dg":
+    slink = input("Coloque o link da aula embaixo.\n >  ")
+    bot_action(slink)
+elif userchoice == "g":
+    slink = input("Coloque o link da aula embaixo.\n >  ")
+    bot_action(slink)
+elif userchoice == "ef":
+    slink = input("Coloque o link da aula embaixo.\n >  ")
+    bot_action(slink)
 else:
     print("Comando inválido")
     sleep(10)
 #made by Los-had
+sleep(1)
+print('Made by Los-had')
+sleep(5)
