@@ -50,11 +50,11 @@ def vlink(link):
         webbrowser.open_new_tab(link)
 def bot_action(ulink):
     vlink(ulink)
-    msg1 = 'Bom dia!'
-    msg2 = 'Qual é o dever de hoje?'
-    msg3 = 'Qual é a página do livro?'
-    msg4 = 'Tudo bem?'
-    msg5 = 'Que legal!'
+    msg1 = 'Bom dia.'
+    msg2 = 'Qual e o dever de hoje.'
+    msg3 = 'Qual e a página do livro.'
+    msg4 = 'Tudo bem.'
+    msg5 = 'Que legal.'
     msg6 = 'Oi.'
     opt_msg = [msg1, msg2, msg3, msg4, msg5, msg6]
     msg_choice = choice(opt_msg)
@@ -74,7 +74,13 @@ def bot_action(ulink):
     pyautogui.press("esc") 
 #verificando o que o usuario digitou
 if userchoice == "s":
-    sys.exit()
+    usr_choice = input("Tem certeza que quer sair?(y/n)\n >  ")
+    if usr_choice == "y":
+        sys.exit()
+    elif usr_choice == "n":
+        print(userchoice)
+    else:
+        print('Comando inválido =(')
 elif userchoice == "soe":
     slink = input("Coloque o link da aula embaixo.\n >  ")
     bot_action(slink)
