@@ -3,6 +3,7 @@ from time import sleep
 from random import choice, random, shuffle
 import sys
 import webbrowser
+import os
 
 bot_logo = '''
       \_/
@@ -62,15 +63,15 @@ def bot_action(ulink):
     pyautogui.sleep(1)
     pyautogui.hotkey("ctrl", "e")
     pyautogui.sleep(1)
-    pyautogui.click(x = 1000, y = 460, clicks=1)
-    pyautogui.sleep(10)
+    pyautogui.click(x = 1025, y = 515, clicks=1)
+    pyautogui.sleep(10)   
     pyautogui.hotkey("ctrl", "alt", "c")
     pyautogui.sleep(2)
     pyautogui.typewrite(msg_choice)
     pyautogui.sleep(1)
     pyautogui.press("enter")
     pyautogui.sleep(1)
-    pyautogui.press("esc") 
+    pyautogui.press("esc")
 #verificando o que o usuario digitou
 if userchoice == "s":
     usr_choice = input("Tem certeza que quer sair?(y/n)\n >  ")
