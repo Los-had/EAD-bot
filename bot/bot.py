@@ -30,6 +30,11 @@ options = '''
 * DESAFIOS GLOBAIS (dg)                          *
 * GEOGRAFIA (g)                                  *
 * EDUCAÇÃO FÍSICA (ef)                           *
+* MÚSICA (m)                                     *
+* FILOSOFIA (f)                                  *
+* QUIMICA (q)                                    *
+* BIOLOGIA (b)                                   *
+* FISICA (fis)                                   *
 * SAIR(s)                                        *
 ==================================================
 '''
@@ -50,14 +55,9 @@ def vlink(link):
         webbrowser.open_new_tab(link)
 def bot_action(ulink):
     vlink(ulink)
-    msg1 = 'Bom dia.'
-    msg2 = 'Qual e o dever de hoje.'
-    msg3 = 'Qual e a página do livro.'
-    msg4 = 'Tudo bem.'
-    msg5 = 'Que legal.'
-    msg6 = 'Oi.'
-    opt_msg = [msg1, msg2, msg3, msg4, msg5, msg6]
-    msg_choice = choice(opt_msg)
+    opt_msg = ['Bom dia.', 'Qual e o dever de hoje.', 'Qual e a página do livro.', 'Tudo bem.', 'Que legal.', 'Oi.']
+    random_msg = random.shuffle(opt_msg)
+    msg_choice = choice(random_msg)
     pyautogui.sleep(15)
     pyautogui.hotkey("ctrl", "d")
     pyautogui.sleep(1)
@@ -115,6 +115,21 @@ elif userchoice == "g":
     slink = input("Coloque o link da aula embaixo.\n >  ")
     bot_action(slink)
 elif userchoice == "ef":
+    slink = input("Coloque o link da aula embaixo.\n >  ")
+    bot_action(slink)
+elif userchoice == "m":
+    slink = input("Coloque o link da aula embaixo.\n >  ")
+    bot_action(slink)
+elif userchoice == "f":
+    slink = input("Coloque o link da aula embaixo.\n >  ")
+    bot_action(slink)
+elif userchoice == "q":
+    slink = input("Coloque o link da aula embaixo.\n >  ")
+    bot_action(slink)
+elif userchoice == "b":
+    slink = input("Coloque o link da aula embaixo.\n >  ")
+    bot_action(slink)
+elif userchoice == "fis":
     slink = input("Coloque o link da aula embaixo.\n >  ")
     bot_action(slink)
 else:
