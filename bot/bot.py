@@ -1,6 +1,6 @@
 import pyautogui
 from time import sleep
-from random import choice
+from random import choice, random, shuffle
 import sys
 import webbrowser
 
@@ -55,9 +55,8 @@ def vlink(link):
         webbrowser.open_new_tab(link)
 def bot_action(ulink):
     vlink(ulink)
-    opt_msg = ['Bom dia.', 'Qual e o dever de hoje.', 'Qual e a página do livro.', 'Tudo bem.', 'Que legal.', 'Oi.']
-    random_msg = random.shuffle(opt_msg)
-    msg_choice = choice(random_msg)
+    opt_msg = ['Bom dia.', 'Qual e o dever de hoje.', 'Qual e a pagina do livro.', 'Tudo bem.', 'Que legal.', 'Oi.']
+    msg_choice = choice(opt_msg)
     pyautogui.sleep(15)
     pyautogui.hotkey("ctrl", "d")
     pyautogui.sleep(1)
