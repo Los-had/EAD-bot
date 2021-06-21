@@ -1,3 +1,5 @@
+#este prigrama só funciona no novo layout do meet
+
 import pyautogui
 from time import sleep
 from random import choice, random, shuffle
@@ -41,11 +43,14 @@ options = '''
 '''
 
 print(bot_logo)
+sleep(0.5)
+#pyautogui.hotkeys("ctrl", "l")
+#os.system('clear')
 print(options)
 
 userchoice = input("O que deseja fazer?\n >  ")
 #funções
-def vlink(link):
+def meet_link(link):
     #opt1 = 'https://'
     meet_link = 'https://meet.google.com/'
     if meet_link not in link:
@@ -55,8 +60,25 @@ def vlink(link):
     else:
         webbrowser.open_new_tab(link)
 def bot_action(ulink):
-    vlink(ulink)
+    meet_link(ulink)
     opt_msg = ['Bom dia.', 'Qual e o dever de hoje.', 'Qual e a pagina do livro.', 'Tudo bem.', 'Que legal.', 'Oi.']
+    msg_choice = choice(opt_msg)
+    pyautogui.sleep(15)
+    pyautogui.hotkey("ctrl", "d")
+    pyautogui.sleep(1)
+    pyautogui.hotkey("ctrl", "e")
+    pyautogui.sleep(1)
+    pyautogui.click(x = 1025, y = 515, clicks=1)
+    pyautogui.sleep(10)   
+    pyautogui.hotkey("ctrl", "alt", "c")
+    pyautogui.sleep(2)
+    pyautogui.typewrite(msg_choice)
+    pyautogui.sleep(1)
+    pyautogui.press("enter")
+    pyautogui.sleep(1)
+    pyautogui.press("esc")
+def bot_action_english(ulink):
+    opt_msg = ['Hi teacher.', 'What is the homework today.', 'what is the page of the book.', 'Ok.', 'Nice.', 'Hello.', 'Hi.']
     msg_choice = choice(opt_msg)
     pyautogui.sleep(15)
     pyautogui.hotkey("ctrl", "d")
@@ -95,7 +117,7 @@ elif userchoice == "p":
     bot_action(slink)
 elif userchoice == "i":
     slink = input("Coloque o link da aula embaixo.\n >  ")
-    bot_action(slink)
+    bot_action_english(slink)
 elif userchoice == "oi":
     slink = input("Coloque o link da aula embaixo.\n >  ")
     bot_action(slink)
@@ -135,6 +157,7 @@ elif userchoice == "fis":
 else:
     print("Comando inválido")
     sleep(10)
+    sys.exit()
 #made by Los-had
 sleep(1)
 print('Made by Los-had')
